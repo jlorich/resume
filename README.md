@@ -1,4 +1,4 @@
-#Resume
+#Résumé
 
 This is my resume. It's avaialble as a [PDF](https://github.com/jlorich/resume/blob/master/joseph_lorich_resume.pdf?raw=true) or in the original [LaTeX format](https://github.com/jlorich/resume/blob/master/joseph_lorich_resume.tex).
 
