@@ -19,6 +19,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \ProvidesClass{resume}[2010/07/10 v0.9 Resume class]
+\NeedsTeXFormat{LaTeX2e}
 
 \LoadClass[11pt,letterpaper]{article} % Font size and paper type
 
@@ -26,6 +27,10 @@
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
 \usepackage{ifthen} % Required for ifthenelse statements
 \usepackage{multicol} % Required for multi column header
+
+\usepackage{fontspec}
+\setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = fonts/raleway/]{Raleway-ExtraLight}
 
 \pagestyle{empty} % Suppress page numbers
 
@@ -41,7 +46,6 @@
 % One, two or three address lines can be specified 
 \let \@addressone \relax
 \let \@addresstwo \relax
-\let \@addressthree \relax
 
 % \address command can be used to set the first, second, and third address (last 2 optional)
 \def \address #1{
@@ -50,8 +54,6 @@
   }{
   \@ifundefined{@addresstwo}{
   \def \@addresstwo {#1}
-  }{
-     \def \@addressthree {#1}
   }}
 }
 
@@ -94,14 +96,10 @@
           \@ifundefined{@addresstwo}{}{ % Print the first address if specified
             \@addresstwo
           }
-          \\*
-          \@ifundefined{@addressthree}{}{ % Print the second address if specified
-            \@addressthree
         \end{flushright}
     \end{multicols}
 
   
-}
 }
 
 %----------------------------------------------------------------------------------------
