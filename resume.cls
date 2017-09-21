@@ -85,7 +85,7 @@
   \begin{multicols}{2}
         \begin{flushleft} 
           \topskip0pt
-          \vspace*{-0.75mm} \huge \textbf \@name
+          \vspace*{-5.75mm} \huge \textbf \@name
         \end{flushleft}
     \columnbreak
         \begin{flushright}
