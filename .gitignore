@@ -1,5 +1,7 @@
-.fdb_latexmk
-.log
-.pdf
-.synctex.gz
+*.fdb_latexmk
+*.log
+*.pdf
+*.fls
+*.xdv
+*.synctex.gz
 .DS_Store
