@@ -5,3 +5,5 @@
 *.xdv
 *.synctex.gz
 .DS_Store
+*.aux
+*.fdb_latexmk

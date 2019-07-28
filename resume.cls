@@ -29,7 +29,7 @@
 \usepackage{multicol} % Required for multi column header
 
 \usepackage{fontspec}
-\setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig}
+\setmainfont[Color=000000, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig}
 \setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = fonts/raleway/]{Raleway-ExtraLight}
 
 \pagestyle{empty} % Suppress page numbers
@@ -46,33 +46,21 @@
 % One, two or three address lines can be specified 
 \let \@addressone \relax
 \let \@addresstwo \relax
+\let \@addressthree \relax
 
 % \address command can be used to set the first, second, and third address (last 2 optional)
 \def \address #1{
   \@ifundefined{@addressone}{
     \def \@addressone {#1}
   }{
-  \@ifundefined{@addresstwo}{
-  \def \@addresstwo {#1}
-  }}
-}
-
-% \printaddress is used to style an address line (given as input)
-\def \printaddress #1{
-  \begingroup
-    \def \\ {\addressSep\ }
-    \centerline{#1}
-  \endgroup
-  \par
-  \addressskip
-}
-
-% \printname is used to print the name as a page header
-\def \printname {
-  \begingroup
-    {\namesize \bf \@name}
-    
-  \endgroup
+    \@ifundefined{@addresstwo}{
+      \def \@addresstwo {#1}
+    }{
+      \@ifundefined{@addressthree}{
+        \def \@addressthree {#1}
+      }
+    }
+  }
 }
 
 %----------------------------------------------------------------------------------------
@@ -85,9 +73,10 @@
   \begin{multicols}{2}
         \begin{flushleft} 
           \topskip0pt
-          \vspace*{-5.75mm} \huge \textbf \@name
+          \vspace{0pt} \huge \textbf \@name
         \end{flushleft}
     \columnbreak
+        \vspace{0pt}
         \begin{flushright}
           \@ifundefined{@addressone}{}{ % Print the first address if specified
             \@addressone
@@ -96,10 +85,13 @@
           \@ifundefined{@addresstwo}{}{ % Print the first address if specified
             \@addresstwo
           }
+          \@ifundefined{@addressthree}{}{ % Print the first address if specified
+            \\*
+            \@addressthree
+          }
         \end{flushright}
     \end{multicols}
-
-  
+    \vspace{-1.5em}
 }
 
 %----------------------------------------------------------------------------------------
