@@ -1,0 +1,18 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.117.1/containers/ubuntu-18.04-git
+{
+	"name": "LaTeX Resume",
+	//"dockerFile": "Dockerfile",
+	"image": "qmcgaw/latexdevcontainer:latest",
+
+	"postCreateCommand": "tlmgr update --self; tlmgr install parskip etoolbox fontspec",
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"james-yu.latex-workshop"
+	],
+
+	"mounts": [
+	]
+}
+//
