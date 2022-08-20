@@ -27,10 +27,18 @@
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
 \usepackage{ifthen} % Required for ifthenelse statements
 \usepackage{multicol} % Required for multi column header
-
 \usepackage{fontspec}
-\setmainfont[Color=000000, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig}
-\setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = fonts/raleway/]{Raleway-ExtraLight}
+\setmainfont[
+    Color=000000,
+    Path = fonts/lato/,
+    BoldItalicFont=Lato-BolIta.ttf,
+    BoldFont=Lato-Bol.ttf,
+    ItalicFont=Lato-LigIta.ttf,
+    FontFace = {sb}{n}{Font=Lato-Reg.ttf}
+]{Lato-Lig.ttf}
+
+\DeclareRobustCommand\sbseries{\fontseries{sb}\selectfont}
+\DeclareTextFontCommand{\textsb}{\sbseries}
 
 \pagestyle{empty} % Suppress page numbers
 
@@ -76,7 +84,7 @@
           \vspace{0pt} \huge \textbf \@name
         \end{flushleft}
     \columnbreak
-        \vspace{0pt}
+        \vspace{-0pt}
         \begin{flushright}
           \@ifundefined{@addressone}{}{ % Print the first address if specified
             \@addressone
@@ -100,11 +108,11 @@
 
 % Defines the rSection environment for the large sections within the CV
 \newenvironment{rSection}[1]{ % 1 input argument - section name
-  \MakeUppercase{\bf #1} % Section title
+  {\bf #1} % Section title
   \sectionlineskip
   \hrule % Horizontal line
   \begin{list}{}{ % List for each individual item in the section
-    \setlength{\leftmargin}{1.5em} % Margin within the section
+    \setlength{\leftmargin}{0.0em} % Margin within the section
   }
   \item[]
 }{
@@ -116,7 +124,7 @@
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rSubsectionTitleOnly}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\bf #1} \hfill {#2} % Bold company name and date on the right
+ {\textsb{#1}} \hfill {\textsb{#2}} % Bold company name and date on the right
  \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
   \\
   {\em #3} \hfill {\em #4} % Italic job title and location
@@ -125,7 +133,7 @@
 
 \newenvironment{rSubsectionNoTitle}{ % 4 input arguments - company name, year(s) employed, job title and location
   \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
+  \begin{list}{$\cdot$}{\leftmargin=.75em} % \cdot used for bullets, no indentation
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
@@ -133,12 +141,12 @@
 }
 
 \newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\bf #1} \hfill {#2} % Bold company name and date on the right
+ {\textsb{#1}} \hfill {\textsb{#2}} % Bold company name and date on the right
  \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
   \\
   {\em #3} \hfill {\em #4} % Italic job title and location
   }\smallskip
-  \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
+  \begin{list}{$\cdot$}{\leftmargin=.75em} % \cdot used for bullets, no indentation
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
@@ -146,13 +154,13 @@
 }
 
 \newenvironment{rSubSubsection}[2]{ % 4 input arguments - company name, year(s) employed, job title and location
- {#2} \hfill {#1} % Bold company name and date on the right
+  \hspace{-1em}{ {\small #1}} \hfill {\small {#2}} % Bold company name and date on the right
   \smallskip
   \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
-  \vspace{0.5em} % Some space after the list of bullet points
+  \vspace{0em} % Some space after the list of bullet points
 }
 
 % The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
