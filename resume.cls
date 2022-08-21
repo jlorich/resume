@@ -123,12 +123,8 @@
 %	WORK EXPERIENCE FORMATTING
 %----------------------------------------------------------------------------------------
 
-\newenvironment{rSubsectionTitleOnly}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\textsb{#1}} \hfill {\textsb{#2}} % Bold company name and date on the right
- \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
-  \\
-  {\em #3} \hfill {\em #4} % Italic job title and location
-  }
+\newenvironment{rSubsectionTitleOnly}[2]{ % 4 input arguments - company name, year(s) employed, job title and location
+ {\textsb{#1}} \hfill {\textit{\small #2}} % Bold company name and date on the right
 }
 
 \newenvironment{rSubsectionNoTitle}{ % 4 input arguments - company name, year(s) employed, job title and location
@@ -140,21 +136,21 @@
   \vspace{0.5em} % Some space after the list of bullet points
 }
 
-\newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\textsb{#1}} \hfill {\textsb{#2}} % Bold company name and date on the right
- \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
+\newenvironment{rSubsection}[3]{ % 4 input arguments - company name, year(s) employed, job title and location
+ {\textsb{#1}} % Bold company name and date on the right
+ \ifthenelse{\equal{#2}{}}{}{ % If the third argument is not specified, don't print the job title and location line
   \\
-  {\em #3} \hfill {\em #4} % Italic job title and location
+  {\textit{\small #2}} \hfill {\textit{\small #3}}
   }\smallskip
   \begin{list}{$\cdot$}{\leftmargin=.75em} % \cdot used for bullets, no indentation
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
-  \vspace{0.5em} % Some space after the list of bullet points
+  \vspace{0em} % Some space after the list of bullet points
 }
 
 \newenvironment{rSubSubsection}[2]{ % 4 input arguments - company name, year(s) employed, job title and location
-  \hspace{-1em}{ {\small #1}} \hfill {\small {#2}} % Bold company name and date on the right
+  \hspace{-1em}{ {\textit{\small #1}}} \hfill {\textit{\small #2}} % Bold company name and date on the right
   \smallskip
   \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
