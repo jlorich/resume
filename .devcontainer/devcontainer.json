@@ -9,7 +9,8 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"james-yu.latex-workshop"
+		"james-yu.latex-workshop",
+		"valentjn.vscode-ltex"
 	],
 
 	"mounts": [
