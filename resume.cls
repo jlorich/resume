@@ -108,6 +108,7 @@
 
 % Defines the rSection environment for the large sections within the CV
 \newenvironment{rSection}[1]{ % 1 input argument - section name
+  \vspace{.25em}
   {\bf #1} % Section title
   \sectionlineskip
   \hrule % Horizontal line
