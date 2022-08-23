@@ -1,4 +1,5 @@
-%! TEX program = lualatex
+% !TEX program = xelatex
+
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
@@ -6,97 +7,106 @@
 
 \documentclass{resume} % Use the custom resume.cls style
 
-\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage[left=0.5in,top=0.6in,right=0.5in,bottom=0.6in]{geometry} % Document margins 
 
 \name{Joey Lorich}
 \address{joey@lorich.me}
-\address{github.com/jlorich}
 \address{linkedin.com/in/jlorich}
+\address{github.com/jlorich}
 
 \begin{document}
 
+%----------------------------------------------------------------------------------------
+%	Profile
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Profile}
 
-%----------------------------------------------------------------------------------------
-%	TECHNICAL STRENGTHS SECTION
-%----------------------------------------------------------------------------------------
-\begin{rSection}{Key Skills}
-\begin{rSubsectionNoTitle}
-\item Strong knowledge of IoT solutions architecture, IoT securitiy, IIoT, and edge device development.
-\item Deep expertise in developing scalable, reliable, secure, cloud-native services on Azure.
-\item Experienced in developing customer sales strategies, impactful metrics, and enabling others.
-\item Adept at starting and nurturing new business relationships and coordinating across multiple teams.
-\end{rSubsectionNoTitle}
+    Customer-obsessed technology leader with a proven track record of driving strategy, instilling technical excellence, and developing high-impact opportunities. Diverse career history spanning software development, engineering leadership, technical sales, and product management at both cutting-edge startups and global technology providers. Passionate about enabling organizational and cultural transformation by improving the intersection of people and technology.
+
 \end{rSection}
     
 %----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE SECTION
+%	Experience
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Experience}
 
 %------------------------------------------------
 
-\begin{rSubsection}{Senior Azure IoT Global Black Belt at Microsoft}{\bf December 2020 - Present}{}{}
+\begin{rSubsection}{Microsoft}{}{}
 
-\item Worked closely with strategic Microsoft customers to bring well-architected best practices to their solutions. Assisted in development of PoCs and Pilots and worked to unblock customer issues.  
-\item Drove acquisition of numerous net-new IoT customers, helping to rapidly bring new products to Azure.
-\item Led joint strategy with key industrial IoT partners for developing well-architected platforms.
-\item Helped enable scale by bringing IoT documentation and training to the broader Microsoft sales field.
-\item Worked with product, finance, and marketing teams to analyze large-scale customer solutions and develop better metrics and strategies for customer focus.
+    %------------------------------------------------
 
-\end{rSubsection}
+    \begin{rSubSubsection}{Principal PM Architect | Azure IoT}{January 2022 - Present}{}{} 
 
-%------------------------------------------------
+        \item Lead product strategy for Azure IoT, defining service architecture and cross-product interactions,  managing company-wide coordination efforts, and driving roadmap direction for an organization of over five hundred people.
+        \item Coordinate with operations and sales to ensure effective strategies for revenue, COGS, and new customer acquisition.
+        \item Lead public-facing interactions, presenting at customer roundtable discussions and conferences like Microsoft Build.
+        \item Work with executives to develop and present content for analyst reviews such as Gartner MQ and Forrester Wave.
+        
+    \end{rSubSubsection}
 
-\begin{rSubsection}{Senior MTC Technical Architect - Azure App Development at Microsoft}{\bf April 2018 - December 2020}{}{}
+    %------------------------------------------------
 
-\item Led architecture design sessions, workshops, educational briefings, and proofs of concept for numerous enterprise companies --- helping drive their strategies for software design, DevOps, and cloud migrations.
-\item Helped Microsoft customers develop cloud-native applications.  Guided architecture and development of complex solutions leveraging microservices, containers, serverless platforms, API gateways and more.
-\item Leveraged relationships built across multiple organizations to help instill confidence in Microsoft's products and services, leading to strategic, significant, and valuable product adoptions and platform migrations.
-\item Worked closely with product teams to facilitate new technology adoption and capture customer feedback.
+    \begin{rSubSubsection}{Global Black Belt Technical Specialist | Azure IoT}{December 2020 - January 2022}{}{} 
+
+        \item Worked closely with strategic Microsoft customers to bring well-architected best practices to their IoT solutions. Led development of customer pilots and worked with engineering to resolve opportunity-blocking customer challenges.  
+        \item Drove acquisition of numerous net-new Azure IoT customers, helping customers rapidly bring products to market.
+        \item Led partnerships with strategic IIoT partners like PTC and Rockwell to develop effective cross-solution patterns.
+        \item Worked with product, finance, and marketing teams to define new metrics and customer acquisition strategies.
+    
+    \end{rSubSubsection}
+
+    %------------------------------------------------
+
+    \begin{rSubSubsection}{Technical Architect | Azure App Development}{April 2018 - December 2020}{}{}
+
+        \item Guided Microsoft customers developing cloud-native applications.  Provided architecture and development expertise for designing complex solutions leveraging Kubernetes, microservices, serverless platforms, API gateways and more.
+        \item Led architecture design sessions, workshops, and educational briefings for numerous Fortune 500 companies --- driving customer strategies for DevOps adoption and cloud migrations leading to over \$100M in Azure commitments.
+        \item Established a cross-organizational team within Microsoft to learn and share customer engagement best practices.
+        
+    \end{rSubSubsection}
+    
+    %------------------------------------------------
     
 \end{rSubsection}
 
-%------------------------------------------------
 
-\begin{rSubsection}{Lead Software Engineer at UniKey Technologies}{\bf May 2015 - December 2017}{}{}
+\begin{rSubsection}{UniKey Technologies}{Engineering Manager | Web Services}{May 2015 - December 2017}
 
-\item Managed a team of developers leveraging Azure cloud-native services in building a platform for residential and commercial IoT access control products powering over 1mm devices.  Provided technical expertise in architecture, performance, and scalability.
-\item Developed software to serve 100,000+ persistent WebSocket connections. Implemented asynchronous message processing using Azure Service Bus to achieve scalability in handling millions of messages per day.
-\item Led development of a public RESTful API empowering partners to develop their own applications on the UniKey platform as well as enabling integrations with Amazon Alexa, SmartThings, Nest, and more.
+\item Managed a team of developers leveraging cloud-native services to build an IoT platform for physical access control, powering over 1,000,000 devices.  Provided technical expertise in architecture, performance, and scalability.
+\item Developed software to serve over 100,000 persistent, simultaneous WebSocket connections from devices. Implemented actors and asynchronous messaging patterns to efficiently process thousands of messages per second.
+\item Led development of partner integrations with Amazon Alexa, Samsung SmartThings, Google Nest, and more.
 
 \end{rSubsection}
 
 %------------------------------------------------
 
-\begin{rSubsection}{Lead Engineer at Cloudspace}{\bf September 2012 - May 2015}{}{}
+\begin{rSubsection}{Cloudspace}{Lead Engineer}{September 2012 - May 2015}
 
-\item Led teams of engineers in developing Ruby on Rails, iOS, and Android applications.  Developed architecture plans for new projects and assisted in their implementation. Facilitated team member learning.
-\item Implemented company-wide CI/CD and quality standards leading to significantly increased productivity.
-    
+\item Led development and architecture of numerous customer applications designed for both web and mobile devices.
+\item Implemented company-wide quality standards and DevOps practices leading to significantly increased productivity.
+
 \end{rSubsection}
 
 %------------------------------------------------
 
-\begin{rSubsectionTitleOnly}{Software Development Contractor}{\bf December 2009 - September 2012}{}{}
+\begin{rSubsectionTitleOnly}{Software Development Contractor}{July 2008 - September 2012}
 \end{rSubsectionTitleOnly}
 
 %------------------------------------------------
-
-\begin{rSubsectionTitleOnly}{UCF/Lockheed Martin CWEP}{\bf July 2008 - November 2009}{}{}
-\end{rSubsectionTitleOnly}
 
 
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
+%	Education
 %----------------------------------------------------------------------------------------
 \vspace{0.5em} % Some space after the list of bullet points
-\begin{rSection}{Education and Achievements}
+\begin{rSection}{Education}
 
-{\bf Microsoft: } Certified Azure Solutions Architect Expert, Certified IoT Developer \hfill \\ 
-{\bf University of Central Florida:} B.S. Double Major - Computer Science; Information Technology  \hfill 2010 \\ 
+    {\bf University of Central Florida } Bachelor of Science | Computer Science; Information Technology  \hfill 2010
+
 \end{rSection}
 
 \end{document}
