@@ -157,8 +157,7 @@
 
 \newenvironment{rRole}[0]{ % 2 input arguments - company, job title, year(s) employed
   \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=1.75em} % \cdot used for bullets, no indentation
-  \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+  \begin{list}{$\cdot$}{\leftmargin=5.0em} % \cdot used for bullets, no indentation
   }{
   \end{list}
   \vspace{0.5em} % Some space after the list of bullet points
@@ -196,12 +195,13 @@
   \vspace{0em} % Some space after the list of bullet points
 }
 
-\newenvironment{rSubSubsection}[2]{
-  \hspace{0em}{ {\textit{\small #1}}} \hfill {\textit{\small #2}}{\parfillskip=0pt\par} % Bold company name and date on the right
+\newenvironment{rSubSubsection}[3]{
+  \vspace{-.25em}
+  \hspace{-.25em} {\small #1} --- {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
   \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=1em} % \cdot used for bullets, no indentation
+  \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
-  \vspace{0em} % Some space after the list of bullet points
+  \vspace{0em}
 }
