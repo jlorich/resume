@@ -197,7 +197,7 @@
 }
 
 \newenvironment{rSubSubsection}[2]{
-  \hspace{0em}{ {\textit{\small #1}}} \hfill {\textit{\small #2}} % Bold company name and date on the right
+  \hspace{0em}{ {\textit{\small #1}}} \hfill {\textit{\small #2}}{\parfillskip=0pt\par} % Bold company name and date on the right
   \smallskip
   \begin{list}{$\cdot$}{\leftmargin=1em} % \cdot used for bullets, no indentation
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
