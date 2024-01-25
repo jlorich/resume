@@ -110,7 +110,7 @@
 
 % Defines the rSection environment for the large sections within the CV
 \newenvironment{rSection}[1]{ % 1 input argument - section name
-  \vspace{1em}
+  \vspace{.25em}
   {\large \bf #1} % Section title
   \medskip
   \hrule % Horizontal line
@@ -152,7 +152,7 @@
   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
 }{
   \end{list}
-  \vspace{0.5em} % Some space after the list of bullet points
+  \vspace{0.0em} % Some space after the list of bullet points
 }
 
 \newenvironment{rRole}[0]{ % 2 input arguments - company, job title, year(s) employed
