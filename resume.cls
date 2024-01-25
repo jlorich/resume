@@ -196,7 +196,7 @@
   \vspace{0em} % Some space after the list of bullet points
 }
 
-\newenvironment{rSubSubsection}[2]{ % 4 input arguments - company name, year(s) employed, job title and location
+\newenvironment{rSubSubsection}[2]{
   \hspace{0em}{ {\textit{\small #1}}} \hfill {\textit{\small #2}} % Bold company name and date on the right
   \smallskip
   \begin{list}{$\cdot$}{\leftmargin=1em} % \cdot used for bullets, no indentation
