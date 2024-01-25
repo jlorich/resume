@@ -126,12 +126,12 @@
   \ifthenelse{\equal{#3}{}}{ % Third argument is blank
     \ifthenelse{\not \equal{#2}{}}{ % Second argument is not blank
       % Print dates on the same line
-      \hfill {\textit{\small #2}}
+      \hfill {\textit{\small #2}}{\parfillskip=0pt\par}
     }
   }{
     % Print title and date on the next line
     \\
-    {\textit{\small #2}} \hfill {\textit{\small #3}}
+    {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par}
   }
 }{
 }
