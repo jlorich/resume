@@ -28,6 +28,8 @@
 \usepackage{ifthen} % Required for ifthenelse statements
 \usepackage{multicol} % Required for multi column header
 \usepackage{fontspec}
+\usepackage[11pt]{moresize}
+\usepackage[left=.5in,top=0.6in,right=.5in,bottom=0.6in]{geometry} % Document margins 
 \setmainfont[
     Color=000000,
     Path = fonts/lato/,
@@ -79,12 +81,12 @@
 \renewcommand{\document}{
   \ori@document  % Begin document
   \begin{multicols}{2}
-        \begin{flushleft} 
-          \topskip0pt
-          \vspace{0pt} \huge \textbf \@name
+        \vspace*{-1em}
+        \begin{flushleft}
+          \fontsize{40}{40} \textbf \@name
         \end{flushleft}
     \columnbreak
-        \vspace{-0pt}
+        \vspace{0pt}
         \begin{flushright}
           \@ifundefined{@addressone}{}{ % Print the first address if specified
             \@addressone
@@ -99,7 +101,7 @@
           }
         \end{flushright}
     \end{multicols}
-    \vspace{-1.5em}
+    \vspace{0em}
 }
 
 %----------------------------------------------------------------------------------------
@@ -108,29 +110,73 @@
 
 % Defines the rSection environment for the large sections within the CV
 \newenvironment{rSection}[1]{ % 1 input argument - section name
-  \vspace{.25em}
-  {\bf #1} % Section title
-  \sectionlineskip
+  \vspace{1em}
+  {\large \bf #1} % Section title
+  \medskip
   \hrule % Horizontal line
-  \begin{list}{}{ % List for each individual item in the section
-    \setlength{\leftmargin}{0.0em} % Margin within the section
-  }
-  \item[]
 }{
-  \end{list}
 }
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE FORMATTING
 %----------------------------------------------------------------------------------------
 
-\newenvironment{rSubsectionTitleOnly}[2]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\textsb{#1}} \hfill {\textit{\small #2}} % Bold company name and date on the right
+\newenvironment{rCompany}[3]{ % 2 input arguments - company, job title, year(s) employed
+  {\textsb{#1}}
+  \ifthenelse{\equal{#3}{}}{ % Third argument is blank
+    \ifthenelse{\not \equal{#2}{}}{ % Second argument is not blank
+      % Print dates on the same line
+      \hfill {\textit{\small #2}}
+    }
+  }{
+    % Print title and date on the next line
+    \\
+    {\textit{\small #2}} \hfill {\textit{\small #3}}
+  }
+}{
 }
+
+\newenvironment{rNewRole}[3]{ % 2 input arguments - company, job title, year(s) employed
+  {\textsb{#2}}
+  \ifthenelse{\equal{#3}{}}{ % Third argument is blank
+    \ifthenelse{\not \equal{#1}{}}{ % Second argument is not blank
+      % Print dates on the same line
+      \hfill {\textit{\small #1}}
+    }
+  }{
+    % Print title and date on the next line
+     \textit{\small at #1} \hfill \textit{\small #3}{\parfillskip=0pt\par}
+  }
+  \smallskip
+  \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
+  \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+}{
+  \end{list}
+  \vspace{0.5em} % Some space after the list of bullet points
+}
+
+\newenvironment{rRole}[0]{ % 2 input arguments - company, job title, year(s) employed
+  \smallskip
+  \begin{list}{$\cdot$}{\leftmargin=1.75em} % \cdot used for bullets, no indentation
+  \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+  }{
+  \end{list}
+  \vspace{0.5em} % Some space after the list of bullet points
+}
+
+\newenvironment{rSubsectionTitleOnly}[2]{ % 2 input arguments - name, year(s) employed
+  {\textsb{#1}}
+  \ifthenelse{\equal{#2}{}}{
+    % Don't print dates
+  }{
+    % Print dates on the same line
+    \hfill {\textit{\small #2}}
+  }
+}{}
 
 \newenvironment{rSubsectionNoTitle}{ % 4 input arguments - company name, year(s) employed, job title and location
   \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=.75em} % \cdot used for bullets, no indentation
+  \begin{list}{$\cdot$}{\leftmargin=1.75em} % \cdot used for bullets, no indentation
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
@@ -151,18 +197,11 @@
 }
 
 \newenvironment{rSubSubsection}[2]{ % 4 input arguments - company name, year(s) employed, job title and location
-  \hspace{-1em}{ {\textit{\small #1}}} \hfill {\textit{\small #2}} % Bold company name and date on the right
+  \hspace{0em}{ {\textit{\small #1}}} \hfill {\textit{\small #2}} % Bold company name and date on the right
   \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
+  \begin{list}{$\cdot$}{\leftmargin=1em} % \cdot used for bullets, no indentation
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
   \vspace{0em} % Some space after the list of bullet points
 }
-
-% The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
-\def\namesize{\huge} % Size of the name at the top of the document
-\def\addressskip{\smallskip} % The space between the two address (or phone/email) lines
-\def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
-\def\nameskip{\bigskip} % The space after your name at the top
-\def\sectionskip{\medskip} % The space after the heading section
