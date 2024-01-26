@@ -137,7 +137,7 @@
 }
 
 \newenvironment{rNewRole}[3]{ % 2 input arguments - company, job title, year(s) employed
-  {\textsb{#2}}
+  {\textsb{#2}}%
   \ifthenelse{\equal{#3}{}}{ % Third argument is blank
     \ifthenelse{\not \equal{#1}{}}{ % Second argument is not blank
       % Print dates on the same line
@@ -145,7 +145,7 @@
     }
   }{
     % Print title and date on the next line
-     \textit{\small at #1} \hfill \textit{\small #3}{\parfillskip=0pt\par}
+    \textsb{\small{ | ~#1}} \hfill \textit{\small #3}{\parfillskip=0pt\par}
   }
   \smallskip
   \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
@@ -197,7 +197,7 @@
 
 \newenvironment{rSubSubsection}[3]{
   \vspace{-.25em}
-  \hspace{-.25em} {\small #1} --- {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
+  \hspace{-.25em} {\small #1}  |  {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
   \smallskip
   \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
    \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
