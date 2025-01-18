@@ -3,9 +3,9 @@
 {
 	"name": "LaTeX Resume",
 	//"dockerFile": "Dockerfile",
-	"image": "qmcgaw/latexdevcontainer:latest",
+	"image": "qmcgaw/latexdevcontainer:latest-full",
 
-	"postCreateCommand": "tlmgr update --self; tlmgr install parskip etoolbox fontspec moresize",
+	"postCreateCommand": "apt-get update && apt-get install -y libfontconfig && tlmgr update --self; tlmgr install fontconfig parskip etoolbox fontspec moresize",
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"customizations": {
