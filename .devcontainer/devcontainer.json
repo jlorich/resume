@@ -2,10 +2,8 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.117.1/containers/ubuntu-18.04-git
 {
 	"name": "LaTeX Resume",
-	//"dockerFile": "Dockerfile",
-	"image": "qmcgaw/latexdevcontainer:latest-full",
-
-	"postCreateCommand": "apt-get update && apt-get install -y libfontconfig && tlmgr update --self; tlmgr install fontconfig parskip etoolbox fontspec moresize",
+	"dockerFile": "Dockerfile",
+	"remoteUser": "vscode",
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"customizations": {
