@@ -133,69 +133,12 @@
     \\
     {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par}
   }
+  \newline
 }{
 }
 
-\newenvironment{rNewRole}[3]{ % 2 input arguments - company, job title, year(s) employed
-  {\textsb{#2}}%
-  \ifthenelse{\equal{#3}{}}{ % Third argument is blank
-    \ifthenelse{\not \equal{#1}{}}{ % Second argument is not blank
-      % Print dates on the same line
-      \hfill {\textit{\small #1}}
-    }
-  }{
-    % Print title and date on the next line
-    \textsb{\small{ | ~#1}} \hfill \textit{\small #3}{\parfillskip=0pt\par}
-  }
-  \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
-  \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
-}{
-  \end{list}
-  \vspace{0.0em} % Some space after the list of bullet points
-}
 
-\newenvironment{rRole}[0]{ % 2 input arguments - company, job title, year(s) employed
-  \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=5.0em} % \cdot used for bullets, no indentation
-  }{
-  \end{list}
-  \vspace{0.5em} % Some space after the list of bullet points
-}
-
-\newenvironment{rSubsectionTitleOnly}[2]{ % 2 input arguments - name, year(s) employed
-  {\textsb{#1}}
-  \ifthenelse{\equal{#2}{}}{
-    % Don't print dates
-  }{
-    % Print dates on the same line
-    \hfill {\textit{\small #2}}
-  }
-}{}
-
-\newenvironment{rSubsectionNoTitle}{ % 4 input arguments - company name, year(s) employed, job title and location
-  \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=1.75em} % \cdot used for bullets, no indentation
-   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
-  }{
-  \end{list}
-  \vspace{0.5em} % Some space after the list of bullet points
-}
-
-\newenvironment{rSubsection}[3]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\textsb{#1}} % Bold company name and date on the right
- \ifthenelse{\equal{#2}{}}{}{ % If the third argument is not specified, don't print the job title and location line
-  \\
-  {\textit{\small #2}} \hfill {\textit{\small #3}}
-  }\smallskip
-  \begin{list}{$\cdot$}{\leftmargin=.75em} % \cdot used for bullets, no indentation
-   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
-  }{
-  \end{list}
-  \vspace{0em} % Some space after the list of bullet points
-}
-
-\newenvironment{rSubSubsection}[3]{
+\newenvironment{rRole}[3]{
   \vspace{-.25em}
   \ifthenelse{\equal{#2}{}}{
     \hspace{-.25em} {\small #1} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
