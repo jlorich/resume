@@ -30,17 +30,33 @@
 \usepackage{fontspec}
 \usepackage[11pt]{moresize}
 \usepackage[left=.5in,top=0.6in,right=.5in,bottom=0.6in]{geometry} % Document margins 
+
 \setmainfont[
-    Color=000000,
-    Path = fonts/lato/,
-    BoldItalicFont=Lato-BolIta.ttf,
-    BoldFont=Lato-Bol.ttf,
-    ItalicFont=Lato-LigIta.ttf,
-    FontFace = {sb}{n}{Font=Lato-Reg.ttf}
-]{Lato-Lig.ttf}
+  Color          = 000000,
+  Path           = fonts/lato/,
+  Extension      = .ttf,
+  % Font File Names for Standard Shapes
+  UprightFont    = *-Lig,
+  ItalicFont     = *-LigIta,
+  BoldFont       = *-Bol,
+  BoldItalicFont = *-BolIta,
+  % Custom Shapes
+  FontFace={l}{n}{ *-Hai},     % Light
+  FontFace={l}{i}{ *-HaiIta},  % Light Italic
+  FontFace={sb}{n}{ *-Reg},    % Semibold 
+  FontFace={sb}{i}{ *-RegIta}, % Semibold Italic
+  FontFace={ub}{n}{ *-Bla},
+  FontFace={ub}{n}{ *-BlaIta}
+]{Lato}
 
 \DeclareRobustCommand\sbseries{\fontseries{sb}\selectfont}
 \DeclareTextFontCommand{\textsb}{\sbseries}
+
+\DeclareRobustCommand\ltseries{\fontseries{l}\selectfont}
+\DeclareTextFontCommand{\textlt}{\ltseries}
+
+\DeclareRobustCommand\ubseries{\fontseries{ub}\selectfont}
+\DeclareTextFontCommand{\textub}{\ubseries}
 
 \pagestyle{empty} % Suppress page numbers
 
@@ -120,7 +136,7 @@
 \newenvironment{rSkills}[1]{
   \vspace{.75em}
   \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
-   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+   \itemsep -0.25em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
   \vspace{0em}
@@ -132,7 +148,7 @@
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rCompany}[3]{ % 2 input arguments - company, job title, year(s) employed
-  {\textsb{#1}}
+  {\small \textbf{#1}}
   \ifthenelse{\equal{#3}{}}{ % Third argument is blank
     \ifthenelse{\not \equal{#2}{}}{ % Second argument is not blank
       % Print dates on the same line
