@@ -151,13 +151,13 @@
 \newenvironment{rRole}[3]{
   \vspace{-.25em}
   \ifthenelse{\equal{#2}{}}{
-    \hspace{-.25em} {\small #1} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
+    \hspace{-.25em} {\small \textsb {#1}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
   }{
-    \hspace{-.25em} {\small #1}  |  {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
+    \hspace{-.25em} {\small \textsb {#1}}  |  {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
   }
   \vspace{.25em}
   \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
-   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+   \itemsep -0.25em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
   \vspace{0em}
