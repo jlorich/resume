@@ -133,6 +133,16 @@
 }{
 }
 
+\newenvironment{rSummary}[1]{ % 1 input argument - section name
+  \vspace{.25em}
+  {\large \bf #1} % Section title
+  \medskip
+  \hrule % Horizontal line
+  \begin{minipage}[t]{0.6\textwidth}  
+}{
+  \end{minipage}
+}
+
 \newenvironment{rSkills}[1]{
   \vspace{.75em}
   \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
