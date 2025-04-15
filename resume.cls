@@ -134,12 +134,29 @@
 }
 
 \newenvironment{rSummary}[1]{ % 1 input argument - section name
-  \vspace{.25em}
-  {\large \bf #1} % Section title
-  \medskip
-  \hrule % Horizontal line
-  \begin{minipage}[t]{0.6\textwidth}  
+  \begin{minipage}[t]{\dimexpr((0.6\textwidth)-1.0em)}
+    \vspace{.25em}
+    {\large \bf #1} % Section title
+    \medskip
+    \hrule % Horizontal line
+    \vspace{1em}
 }{
+  \end{minipage}
+  \hspace{1em}
+}
+
+\newenvironment{rAchievements}[1]{ % 1 input argument - section name
+  \begin{minipage}[t]{0.4\textwidth}
+    \vspace{.25em}
+    {\large \bf #1} % Section title
+    \medskip
+    \hrule % Horizontal line
+    \vspace{1em}
+    \begin{list}{}{\leftmargin=0em} % \cdot used for bullets, no indentation
+     \itemsep 0.25em \vspace{-0.5em} % Compress items in list together for aesthetics
+  }{
+    \end{list}
+    \vspace{0em}
   \end{minipage}
 }
 
