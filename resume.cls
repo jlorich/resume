@@ -30,17 +30,33 @@
 \usepackage{fontspec}
 \usepackage[11pt]{moresize}
 \usepackage[left=.5in,top=0.6in,right=.5in,bottom=0.6in]{geometry} % Document margins 
+
 \setmainfont[
-    Color=000000,
-    Path = fonts/lato/,
-    BoldItalicFont=Lato-BolIta.ttf,
-    BoldFont=Lato-Bol.ttf,
-    ItalicFont=Lato-LigIta.ttf,
-    FontFace = {sb}{n}{Font=Lato-Reg.ttf}
-]{Lato-Lig.ttf}
+  Color          = 000000,
+  Path           = fonts/lato/,
+  Extension      = .ttf,
+  % Font File Names for Standard Shapes
+  UprightFont    = *-Lig,
+  ItalicFont     = *-LigIta,
+  BoldFont       = *-Bol,
+  BoldItalicFont = *-BolIta,
+  % Custom Shapes
+  FontFace={l}{n}{ *-Hai},     % Light
+  FontFace={l}{i}{ *-HaiIta},  % Light Italic
+  FontFace={sb}{n}{ *-Reg},    % Semibold 
+  FontFace={sb}{i}{ *-RegIta}, % Semibold Italic
+  FontFace={ub}{n}{ *-Bla},
+  FontFace={ub}{n}{ *-BlaIta}
+]{Lato}
 
 \DeclareRobustCommand\sbseries{\fontseries{sb}\selectfont}
 \DeclareTextFontCommand{\textsb}{\sbseries}
+
+\DeclareRobustCommand\ltseries{\fontseries{l}\selectfont}
+\DeclareTextFontCommand{\textlt}{\ltseries}
+
+\DeclareRobustCommand\ubseries{\fontseries{ub}\selectfont}
+\DeclareTextFontCommand{\textub}{\ubseries}
 
 \pagestyle{empty} % Suppress page numbers
 
@@ -110,19 +126,29 @@
 
 % Defines the rSection environment for the large sections within the CV
 \newenvironment{rSection}[1]{ % 1 input argument - section name
-  \vspace{.5em}
+  \vspace{.25em}
   {\large \bf #1} % Section title
   \medskip
   \hrule % Horizontal line
 }{
 }
 
+\newenvironment{rSkills}[1]{
+  \vspace{.75em}
+  \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
+   \itemsep -0.25em \vspace{-0.5em} % Compress items in list together for aesthetics
+  }{
+  \end{list}
+  \vspace{0em}
+}
+
+
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE FORMATTING
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rCompany}[3]{ % 2 input arguments - company, job title, year(s) employed
-  {\textsb{#1}}
+  {\small \textbf{#1}}
   \ifthenelse{\equal{#3}{}}{ % Third argument is blank
     \ifthenelse{\not \equal{#2}{}}{ % Second argument is not blank
       % Print dates on the same line
@@ -133,74 +159,21 @@
     \\
     {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par}
   }
+  \newline
 }{
 }
 
-\newenvironment{rNewRole}[3]{ % 2 input arguments - company, job title, year(s) employed
-  {\textsb{#2}}%
-  \ifthenelse{\equal{#3}{}}{ % Third argument is blank
-    \ifthenelse{\not \equal{#1}{}}{ % Second argument is not blank
-      % Print dates on the same line
-      \hfill {\textit{\small #1}}
-    }
-  }{
-    % Print title and date on the next line
-    \textsb{\small{ | ~#1}} \hfill \textit{\small #3}{\parfillskip=0pt\par}
-  }
-  \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
-  \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
-}{
-  \end{list}
-  \vspace{0.0em} % Some space after the list of bullet points
-}
 
-\newenvironment{rRole}[0]{ % 2 input arguments - company, job title, year(s) employed
-  \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=5.0em} % \cdot used for bullets, no indentation
-  }{
-  \end{list}
-  \vspace{0.5em} % Some space after the list of bullet points
-}
-
-\newenvironment{rSubsectionTitleOnly}[2]{ % 2 input arguments - name, year(s) employed
-  {\textsb{#1}}
-  \ifthenelse{\equal{#2}{}}{
-    % Don't print dates
-  }{
-    % Print dates on the same line
-    \hfill {\textit{\small #2}}
-  }
-}{}
-
-\newenvironment{rSubsectionNoTitle}{ % 4 input arguments - company name, year(s) employed, job title and location
-  \smallskip
-  \begin{list}{$\cdot$}{\leftmargin=1.75em} % \cdot used for bullets, no indentation
-   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
-  }{
-  \end{list}
-  \vspace{0.5em} % Some space after the list of bullet points
-}
-
-\newenvironment{rSubsection}[3]{ % 4 input arguments - company name, year(s) employed, job title and location
- {\textsb{#1}} % Bold company name and date on the right
- \ifthenelse{\equal{#2}{}}{}{ % If the third argument is not specified, don't print the job title and location line
-  \\
-  {\textit{\small #2}} \hfill {\textit{\small #3}}
-  }\smallskip
-  \begin{list}{$\cdot$}{\leftmargin=.75em} % \cdot used for bullets, no indentation
-   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
-  }{
-  \end{list}
-  \vspace{0em} % Some space after the list of bullet points
-}
-
-\newenvironment{rSubSubsection}[3]{
+\newenvironment{rRole}[3]{
   \vspace{-.25em}
-  \hspace{-.25em} {\small #1}  |  {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
-  \smallskip
+  \ifthenelse{\equal{#2}{}}{
+    \hspace{-.25em} {\small \textsb {#1}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
+  }{
+    \hspace{-.25em} {\small \textsb {#1}}  |  {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
+  }
+  \vspace{.25em}
   \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
-   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+   \itemsep -0.25em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
   \vspace{0em}
