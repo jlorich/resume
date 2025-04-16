@@ -30,24 +30,166 @@
 \usepackage{fontspec}
 \usepackage[11pt]{moresize}
 \usepackage[left=.5in,top=0.6in,right=.5in,bottom=0.6in]{geometry} % Document margins 
+\usepackage{color}
+
+% \setmainfont[
+%   Color          = 000000,
+%   Path           = fonts/lato/,
+%   Extension      = .ttf,
+%   % Font File Names for Standard Shapes
+%   UprightFont    = *-Lig,
+%   ItalicFont     = *-LigIta,
+%   BoldFont       = *-Bol,
+%   BoldItalicFont = *-BolIta,
+%   % Custom Shapes
+%   FontFace={l}{n}{ *-Hai},     % Light
+%   FontFace={l}{i}{ *-HaiIta},  % Light Italic
+%   FontFace={sb}{n}{ *-Reg},    % Semibold 
+%   FontFace={sb}{i}{ *-RegIta}, % Semibold Italic
+%   FontFace={ub}{n}{ *-Bla},
+%   FontFace={ub}{i}{ *-BlaIta}
+% ]{Lato}
 
 \setmainfont[
   Color          = 000000,
-  Path           = fonts/lato/,
+  Path           = fonts/Nunito_Sans/,
   Extension      = .ttf,
-  % Font File Names for Standard Shapes
-  UprightFont    = *-Lig,
-  ItalicFont     = *-LigIta,
-  BoldFont       = *-Bol,
-  BoldItalicFont = *-BolIta,
+  % Font File Names and Features for Standard Shapes
+  BoldFont       = *,
+  BoldItalicFont = *-Italic,
+  ItalicFont     = *-Italic,
+  BoldFeatures={RawFeature={+axis={wght=700}}},
+  BoldItalicFeatures={RawFeature={+axis={wght=700}}},
+  RawFeature={+axis={wght=300}},
+  LetterSpace=-1,
   % Custom Shapes
-  FontFace={l}{n}{ *-Hai},     % Light
-  FontFace={l}{i}{ *-HaiIta},  % Light Italic
-  FontFace={sb}{n}{ *-Reg},    % Semibold 
-  FontFace={sb}{i}{ *-RegIta}, % Semibold Italic
-  FontFace={ub}{n}{ *-Bla},
-  FontFace={ub}{n}{ *-BlaIta}
-]{Lato}
+  FontFace={l}{n}{  Font = *, RawFeature={+axis={wght=200}} },     % Light
+  FontFace={l}{i}{  Font = *-Italic, RawFeature={+axis={wght=200}} },  % Light Italic
+  FontFace={ht}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight
+  FontFace={ht}{i}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight Italic
+  FontFace={sb}{n}{ Font = *, RawFeature={+axis={wght=500}} },    % Semibold 
+  FontFace={sb}{i}{ Font = *-Italic, RawFeature={+axis={wght=500}}}, % Semibold Italic
+  FontFace={ub}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Ultrabold
+  FontFace={ub}{i}{ Font = *-Italic, RawFeature={+axis={wght=400}}} % Ultrabold Italic
+]{NunitoSans}
+
+% \setmainfont[
+%   Color          = 000000,
+%   Path           = fonts/Montserrat/,
+%   Extension      = .ttf,
+%   % Font File Names and Features for Standard Shapes
+%   BoldFont       = *,
+%   BoldItalicFont = *-Italic,
+%   ItalicFont     = *-Italic,
+%   BoldFeatures={RawFeature={+axis={wght=700}}},
+%   BoldItalicFeatures={RawFeature={+axis={wght=700}}},
+%   RawFeature={+axis={wght=300}},
+%   LetterSpace=-1,
+%   % Custom Shapes
+%   FontFace={l}{n}{  Font = *, RawFeature={+axis={wght=200}} },     % Light
+%   FontFace={l}{i}{  Font = *-Italic, RawFeature={+axis={wght=200}} },  % Light Italic
+%   FontFace={ht}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight
+%   FontFace={ht}{i}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight Italic
+%   FontFace={sb}{n}{ Font = *, RawFeature={+axis={wght=500}} },    % Semibold 
+%   FontFace={sb}{i}{ Font = *-Italic, RawFeature={+axis={wght=500}}}, % Semibold Italic
+%   FontFace={ub}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Ultrabold
+%   FontFace={ub}{i}{ Font = *-Italic, RawFeature={+axis={wght=400}}} % Ultrabold Italic
+% ]{Montserrat}
+
+% \setmainfont[
+%   Color          = 000000,
+%   Path           = fonts/Open_Sans/,
+%   Extension      = .ttf,
+%   % Font File Names and Features for Standard Shapes
+%   BoldFont       = *,
+%   BoldItalicFont = *-Italic,
+%   ItalicFont     = *-Italic,
+%   BoldFeatures={RawFeature={+axis={wght=700}}},
+%   BoldItalicFeatures={RawFeature={+axis={wght=700}}},
+%   RawFeature={+axis={wght=300}},
+%   LetterSpace=-1,
+%   % Custom Shapes
+%   FontFace={l}{n}{  Font = *, RawFeature={+axis={wght=200}} },     % Light
+%   FontFace={l}{i}{  Font = *-Italic, RawFeature={+axis={wght=200}} },  % Light Italic
+%   FontFace={ht}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight
+%   FontFace={ht}{i}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight Italic
+%   FontFace={sb}{n}{ Font = *, RawFeature={+axis={wght=500}} },    % Semibold 
+%   FontFace={sb}{i}{ Font = *-Italic, RawFeature={+axis={wght=500}}}, % Semibold Italic
+%   FontFace={ub}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Ultrabold
+%   FontFace={ub}{i}{ Font = *-Italic, RawFeature={+axis={wght=400}}} % Ultrabold Italic
+% ]{OpenSans}
+
+% \setmainfont[
+%   Color          = 000000,
+%   Path           = fonts/Roboto/,
+%   Extension      = .ttf,
+%   % Font File Names and Features for Standard Shapes
+%   BoldFont       = *,
+%   BoldItalicFont = *-Italic,
+%   ItalicFont     = *-Italic,
+%   BoldFeatures={RawFeature={+axis={wght=700}}},
+%   BoldItalicFeatures={RawFeature={+axis={wght=700}}},
+%   RawFeature={+axis={wght=300}},
+%   LetterSpace=-1,
+%   % Custom Shapes
+%   FontFace={l}{n}{  Font = *, RawFeature={+axis={wght=200}} },     % Light
+%   FontFace={l}{i}{  Font = *-Italic, RawFeature={+axis={wght=200}} },  % Light Italic
+%   FontFace={ht}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight
+%   FontFace={ht}{i}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight Italic
+%   FontFace={sb}{n}{ Font = *, RawFeature={+axis={wght=500}} },    % Semibold 
+%   FontFace={sb}{i}{ Font = *-Italic, RawFeature={+axis={wght=500}}}, % Semibold Italic
+%   FontFace={ub}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Ultrabold
+%   FontFace={ub}{i}{ Font = *-Italic, RawFeature={+axis={wght=400}}} % Ultrabold Italic
+% ]{Roboto}
+
+% \setmainfont[
+%   Color          = 000000,
+%   Path           = fonts/Roboto_Slab/,
+%   Extension      = .ttf,
+%   % Font File Names and Features for Standard Shapes
+%   BoldFont       = *,
+%   BoldItalicFont = *,
+%   ItalicFont     = *,
+%   BoldFeatures={RawFeature={+axis={wght=700}}},
+%   BoldItalicFeatures={RawFeature={+axis={wght=700}}},
+%   RawFeature={+axis={wght=300}},
+%   LetterSpace=-1,
+%   % Custom Shapes
+%   FontFace={l}{n}{  Font = *, RawFeature={+axis={wght=200}} },     % Light
+%   FontFace={l}{i}{  Font = *, RawFeature={+axis={wght=200}} },  % Light Italic
+%   FontFace={ht}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight
+%   FontFace={ht}{i}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight Italic
+%   FontFace={sb}{n}{ Font = *, RawFeature={+axis={wght=500}} },    % Semibold 
+%   FontFace={sb}{i}{ Font = *, RawFeature={+axis={wght=500}}}, % Semibold Italic
+%   FontFace={ub}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Ultrabold
+%   FontFace={ub}{i}{ Font = *, RawFeature={+axis={wght=400}}} % Ultrabold Italic
+% ]{RobotoSlab}
+
+% \setmainfont[
+%   Color          = 000000,
+%   Path           = fonts/Roboto_Flex/,
+%   Extension      = .ttf,
+%   % Font File Names and Features for Standard Shapes
+%   BoldFont       = *,
+%   BoldItalicFont = *,
+%   ItalicFont     = *,
+%   BoldFeatures={RawFeature={+axis={wght=700}}},
+%   BoldItalicFeatures={RawFeature={+axis={wght=700}}},
+%   RawFeature={+axis={wght=200}},
+%   LetterSpace=-1,
+%   % Custom Shapes
+%   FontFace={l}{n}{  Font = *, RawFeature={+axis={wght=200}} },     % Light
+%   FontFace={l}{i}{  Font = *, RawFeature={+axis={wght=200}} },  % Light Italic
+%   FontFace={ht}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight
+%   FontFace={ht}{i}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight Italic
+%   FontFace={sb}{n}{ Font = *, RawFeature={+axis={wght=500}} },    % Semibold 
+%   FontFace={sb}{i}{ Font = *, RawFeature={+axis={wght=500}}}, % Semibold Italic
+%   FontFace={ub}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Ultrabold
+%   FontFace={ub}{i}{ Font = *, RawFeature={+axis={wght=400}}} % Ultrabold Italic
+% ]{RobotoFlex}
+
+\definecolor{darkgray}{gray}{0.4}
+\definecolor{highlightcolor}{gray}{0.0}
 
 \DeclareRobustCommand\sbseries{\fontseries{sb}\selectfont}
 \DeclareTextFontCommand{\textsb}{\sbseries}
@@ -57,6 +199,9 @@
 
 \DeclareRobustCommand\ubseries{\fontseries{ub}\selectfont}
 \DeclareTextFontCommand{\textub}{\ubseries}
+
+\DeclareRobustCommand\highlight{\color{highlightcolor}\fontseries{ht}\fontshape{n}\selectfont}
+\DeclareTextFontCommand{\texthighlight}{\highlight}
 
 \pagestyle{empty} % Suppress page numbers
 
@@ -146,6 +291,7 @@
 }
 
 \newenvironment{rAchievements}[1]{ % 1 input argument - section name
+  \hspace{-1em}
   \begin{minipage}[t]{0.4\textwidth}
     \vspace{.25em}
     {\large \bf #1} % Section title
@@ -175,7 +321,7 @@
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rCompany}[3]{ % 2 input arguments - company, job title, year(s) employed
-  {\small \textbf{#1}}
+  {\small \color{darkgray} \textbf {#1}}
   \ifthenelse{\equal{#3}{}}{ % Third argument is blank
     \ifthenelse{\not \equal{#2}{}}{ % Second argument is not blank
       % Print dates on the same line
@@ -194,14 +340,14 @@
 \newenvironment{rRole}[3]{
   \vspace{-.25em}
   \ifthenelse{\equal{#2}{}}{
-    \hspace{-.25em} {\small \textsb {#1}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
+    \hspace{-.5em} {\small \textsb {#1}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
   }{
-    \hspace{-.25em} {\small \textsb {#1}}  |  {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
+    \hspace{-.5em} {\small \textsb {#1}}  |  {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
   }
   \vspace{.25em}
   \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
    \itemsep -0.25em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
-  \vspace{0em}
+  \vspace{1em}
 }
