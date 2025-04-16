@@ -69,8 +69,8 @@
   FontFace={ht}{i}{ Font = *, RawFeature={+axis={wght=400}}}, % Highlight Italic
   FontFace={sb}{n}{ Font = *, RawFeature={+axis={wght=500}} },    % Semibold 
   FontFace={sb}{i}{ Font = *-Italic, RawFeature={+axis={wght=500}}}, % Semibold Italic
-  FontFace={ub}{n}{ Font = *, RawFeature={+axis={wght=400}}}, % Ultrabold
-  FontFace={ub}{i}{ Font = *-Italic, RawFeature={+axis={wght=400}}} % Ultrabold Italic
+  FontFace={ub}{n}{ Font = *, RawFeature={+axis={wght=800}}}, % Ultrabold
+  FontFace={ub}{i}{ Font = *-Italic, RawFeature={+axis={wght=800}}} % Ultrabold Italic
 ]{NunitoSans}
 
 % \setmainfont[
@@ -321,7 +321,7 @@
 %----------------------------------------------------------------------------------------
 
 \newenvironment{rCompany}[3]{ % 2 input arguments - company, job title, year(s) employed
-  {\small \color{darkgray} \textbf {#1}}
+  {\large \color{darkgray} \textub {#1}}
   \ifthenelse{\equal{#3}{}}{ % Third argument is blank
     \ifthenelse{\not \equal{#2}{}}{ % Second argument is not blank
       % Print dates on the same line
@@ -345,7 +345,7 @@
     \hspace{-.5em} {\small \textsb {#1}}  |  {\textit{\small #2}} \hfill {\textit{\small #3}}{\parfillskip=0pt\par} % Bold company name and date on the right
   }
   \vspace{.25em}
-  \begin{list}{$\cdot$}{\leftmargin=1.25em} % \cdot used for bullets, no indentation
+  \begin{list}{$\cdot$}{\leftmargin=1.0em} % \cdot used for bullets, no indentation
    \itemsep -0.25em \vspace{-0.5em} % Compress items in list together for aesthetics
   }{
   \end{list}
